@@ -28,8 +28,31 @@ const price_for_km = 0.21
 
 let travel_price = route_length * price_for_km 
 
-
 console.log(travel_price)
+
+/* alternative to remove DRY condition (don't repeat yourself) */
+
+let discount = 0
+
+if (user_age < 18) {
+
+discount = 20
+
+} 
+
+else if (user_age > 65) {
+
+    discount = 40
+
+}
+
+const final_price = travel_price * (1 - discount / 100)
+
+console.log(`Your discount is: ${discount} %`);
+console.log(`Your final ticket price is : ${final_price.toFixed(2)} €`);
+
+
+
 
 
 
@@ -41,7 +64,7 @@ ELSE give final price output
 
 */
 
-if (user_age < 18) {
+/* if (user_age < 18) {
 
 let discount_20 = travel_price * 20 / 100
 
@@ -80,7 +103,8 @@ else {
 
 
 console.log(`Your ticket final price is: ${final_output}`)
-}
+} */
+
 
 
 
